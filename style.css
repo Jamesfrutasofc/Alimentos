@@ -15,9 +15,9 @@ body {
 
 .album {
   width: 90%;
-  max-width: 500px;
+  max-width: 400px;
   height: 70vh;
-  max-height: 400px;
+  max-height: 300px;
   perspective: 1400px;
   position: relative;
 }
