@@ -15,16 +15,16 @@ body {
 
 .album {
   width: 90%;
-  max-width: 600px;
+  max-width: 500px;
   height: 80vh;
-  max-height: 450px;
-  perspective: 2000px;
+  max-height: 400px;
+  perspective: 1400px;
   position: relative;
 }
 
 /* Página */
 .page {
-  width: 100%;
+  width: 80%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -34,14 +34,14 @@ body {
   background: white;
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 1s ease, z-index 0s linear 1s;
+  transition: transform 2s ease, z-index 0s linear 1s;
 }
 
 /* Faz páginas já viradas ficarem visíveis atrás */
 .page.flipped {
   transform: rotateY(-180deg);
   z-index: auto;
-  transition: transform 1s ease;
+  transition: transform 2s ease;
 }
 
 /* Imagem interna */
@@ -49,7 +49,10 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border: 5px solid black; /* <-- Borda preta */
+  box-sizing: border-box;  /* Garante que a borda não "estoure" o tamanho */
 }
+
 
 /* Capa */
 .cover {

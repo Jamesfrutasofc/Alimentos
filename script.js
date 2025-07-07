@@ -1,15 +1,15 @@
 const pages = document.querySelectorAll(".page");
-const flipSound = document.getElementById("flip-sound");
 let currentPage = 0;
 
+// Inicializa z-index
 pages.forEach((page, i) => {
   page.style.zIndex = pages.length - i;
 });
 
+// Evento de clique em cada página
 pages.forEach((page, index) => {
   page.addEventListener("click", () => {
-    flipSound.currentTime = 0;
-    flipSound.play();
+    
 
     if (index === currentPage) {
       page.classList.add("flipped");
@@ -23,14 +23,14 @@ pages.forEach((page, index) => {
   });
 });
 
+// Corrige o empilhamento (z-index)
 function updateZIndexes() {
   pages.forEach((page, i) => {
-    if (page.classList.contains("flipped")) {
-      // páginas viradas vão atrás da pilha
-      page.style.zIndex = i;
+    const flipped = page.classList.contains("flipped");
+    if (flipped) {
+      page.style.zIndex = i; // vai para trás
     } else {
-      // páginas à frente
-      page.style.zIndex = pages.length - i;
+      page.style.zIndex = pages.length - i; // fica na frente
     }
   });
 }
